@@ -36,12 +36,16 @@ document.querySelector('.btn-roll').addEventListener('click',function() {
                 document.querySelector('#current-' + activePlayer).textContent = roundScores;   /*It selects the current score of activePlayer changes to text and sets the value equal to dice*/
                 //document.querySelector('#current-' + activePlayer).innerHTML = '<em>'+dice+'</em>'; --> textContent will just convert it into plain text but innerHTML will understand and put the dice in italics
             }
+            else{
+                //Next Player
+                nextPlayer();
+            }
         }
-        
         else{
             //Next Player
             nextPlayer();
         }
+        
     }
 });
 
@@ -81,7 +85,7 @@ function nextPlayer(){
         document.querySelector('.player-0-panel').classList.toggle('active');   /*This removes the active class from player 0 and sets palyer 1 as active*/
         document.querySelector('.player-1-panel').classList.toggle('active');
 
-        document.querySelector('.dice').style.display = 'none';
+        //document.querySelector('.dice').style.display = 'none';
 }
 
 function init()        /*Things done at the start of the game*/
